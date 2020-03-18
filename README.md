@@ -7,7 +7,8 @@ This script makes use of the arcane and undocumented {fwbootmgr} identifier impl
 
 Notes:
 - There's very little point in using this on regular production machines being deployed. Its main use is for machines being repeatedly imaged, or might be useful for lab machines.
-- AFAICT bcdedit provideds no way to pull the friendly names of the devices in the overall UEFI boot order list. Therefore, this script only moves the first entry it identifies in the list which is NOT "{bootmgr}" (a.k.a. "Windows Boot Manager"). It's up to the user to make sure the boot order exists in a state before the script is run, such that the desired result is achieved.
+- AFAICT bcdedit provideds no way to pull the friendly names of the devices in the overall UEFI boot order list. Therefore, this script simply identifies the first entry in the list which is NOT "{bootmgr}" (a.k.a. "Windows Boot Manager"), and moves it to the top of the list.
+    - It's up to the user to make sure the boot order exists in a state before the script is run, such that the desired result is achieved.
     - In my case:
         - My test UEFI VMs initially have the boot order of
              - 1 - "EFI Network"
