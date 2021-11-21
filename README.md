@@ -33,6 +33,7 @@ Here are some sources I used in my research:
 - https://serverfault.com/questions/714337/changing-uefi-boot-order-from-windows
 
 # Notes
+- Only tested on Windows Powershell 5.1.
 - This functionality relies on the completely undocumented feature of bcdedit to modify the `{fwbootmgr}` GPT entry, which contains the overall list of UEFI boot devices. As far as I can tell, bcdedit is really only designed to edit Windows' own `{bootmgr}` entry which represents one of the "boot devices" in the overall UEFI list.
 - There's very little point in using this on regular production machines being deployed. Its main use is for machines being repeatedly imaged, or might be useful for computer lab machines.
 - By mseng3. See my other projects here: https://github.com/mmseng/code-compendium.
